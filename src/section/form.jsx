@@ -2,13 +2,13 @@ import "../App.css";
 export default function FormMets() {
   return (
     <>
-      <div className="formMets mt-8 flex flex-col justify-center">
+      <div className="formMets md:my-8 max-md:mt-4 flex flex-col justify-center">
         <h2 className="md:text-2xl font-bold text-center pb-4">
           Cek risiko sindrom metabolik anda
         </h2>
         <form
           action=""
-          className="flex flex-col text-gray-800 p-6 text-xs gap-4 md:bg-gray-100 md:rounded w-full max-w-sm mx-auto border-1 border-gray-200"
+          className="flex flex-col text-gray-800 p-6 text-xs gap-4 md:bg-gray-100 md:rounded w-full max-w-sm mx-auto md:border-1 md:border-gray-200"
         >
           <div className="usia">
             <h3 className="md:text-sm font-semibold pb-1">Usia</h3>
@@ -31,6 +31,15 @@ export default function FormMets() {
                 Perempuan
               </label>
             </div>
+          </div>
+          <div className="waistcirc">
+            <h3 className="md:text-sm font-semibold pb-1">Lingkar Pinggang (cm)</h3>
+            <input
+              type="number"
+              id="usia"
+              placeholder="Masukkan lingkar pinggang anda"
+              className="border-1 w-82 p-1"
+            />
           </div>
           <div className="bmi flex gap-4">
             <div className="berat">
