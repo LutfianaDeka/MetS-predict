@@ -42,7 +42,7 @@ export default function FormMets() {
                 name="berat"
                 id="berat"
                 placeholder="Contoh: 45"
-                className="border-1 max-w-40 p-1"
+                className="border-1 w-39 p-1"
               />
             </div>
             <div className="tinggi">
@@ -54,7 +54,7 @@ export default function FormMets() {
                 name="berat"
                 id="berat"
                 placeholder="Contoh: 45"
-                className="border-1 max-w-40 p-1"
+                className="border-1 w-39 p-1"
               />
             </div>
           </div>
