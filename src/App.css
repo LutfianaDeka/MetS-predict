@@ -1,0 +1,11 @@
+@import "tailwindcss";
+#root {
+  margin: 0 auto;
+  padding: 0;
+  --primer: #585dff;
+}
+.nav-box,
+.btn-cek,
+.footer {
+  background-color: var(--primer);
+}
