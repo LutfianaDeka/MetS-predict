@@ -66,7 +66,10 @@ export default function FormMets() {
     console.table(payload);
 
     try {
-      const res = await axios.post("http://localhost:5000/predict", payload);
+      const res = await axios.post(
+        "https://6ad0d140-b2b5-44b9-884c-80f31c5ecd16-00-3vlmzk4ociaws.sisko.replit.dev/predict",
+        payload
+      );
       const prediction = res.data.result;
 
       console.log(prediction);
