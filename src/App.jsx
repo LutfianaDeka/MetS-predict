@@ -4,8 +4,8 @@ import Home from "./section/home";
 import Intro from "./section/intro";
 import FormMets from "./section/form";
 import Footer from "./section/footer.jsx";
-import Mets from "./section/mets.jsx";
-import NoMets from "./section/noMets.jsx";
+// import Mets from "./section/mets.jsx";
+// import NoMets from "./section/noMets.jsx";
 function App() {
   return (
     <>
