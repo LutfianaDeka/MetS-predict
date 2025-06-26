@@ -1,11 +1,26 @@
 import "../App.css";
 import { useState } from "react";
 import { AlignJustify } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 export default function Navbar() {
+  const navigate = useNavigate();
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
   const toggleSidebar = () => setSidebarOpen(!isSidebarOpen);
   const closeSidebar = () => setSidebarOpen(false);
+
+  const handleBackHome = () => {
+    navigate("/"); // Pindah ke halaman /
+    setSidebarOpen(false);
+
+    // Tunggu agar elemen tersedia sebelum scroll
+    setTimeout(() => {
+      const el = document.getElementById("home");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  };
   return (
     <>
       <div className="nav-box fixed top-0 z-[9999] w-screen px-8 py-6 max-md:py-4 h-20 max-md:h-15">
@@ -17,6 +32,7 @@ export default function Navbar() {
           <ul className="list text-white hidden md:flex gap-10 text-sm md:gap-4 text-sm">
             <li>
               <a
+                onClick={handleBackHome}
                 href="#home"
                 className="relative group transition-all duration-300 hover:-translate-y-1"
               >

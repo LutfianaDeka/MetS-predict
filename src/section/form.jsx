@@ -1,8 +1,10 @@
 import "../App.css";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function FormMets() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     usia: "",
     gender: "",
@@ -73,9 +75,17 @@ export default function FormMets() {
       const prediction = res.data.result;
 
       console.log(prediction);
-      if (prediction === 0) {
+      console.log(
+        "📊 Hasil prediksi dari backend:",
+        prediction,
+        typeof prediction
+      );
+
+      if (parseInt(prediction) === 0) {
+        navigate("/mets");
         console.log("✅ Hasil Prediksi: Met (Positif Sindrom Metabolik)");
       } else {
+        navigate("/nomets");
         console.log("✅ Hasil Prediksi: No Met (Negatif Sindrom Metabolik)");
       }
     } catch (err) {
