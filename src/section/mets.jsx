@@ -1,7 +1,7 @@
 export default function Mets() {
   return (
     <>
-      <div className="mets pt-20 h-screen mx-6 flex flex-col justify-between">
+      <div className="mets h-screen mx-6 flex flex-col justify-between justify-center">
         <div className="grid grid-cols-2 gap-4">
           <div className="hasil flex flex-wrap">
             <img

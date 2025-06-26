@@ -21,6 +21,31 @@ export default function Navbar() {
       }
     }, 100);
   };
+
+  const handleBackIntro = () => {
+    navigate("/"); // Pindah ke halaman /
+    setSidebarOpen(false);
+
+    // Tunggu agar elemen tersedia sebelum scroll
+    setTimeout(() => {
+      const el = document.getElementById("intro");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  };
+  const handleBackCek = () => {
+    navigate("/"); // Pindah ke halaman /
+    setSidebarOpen(false);
+
+    // Tunggu agar elemen tersedia sebelum scroll
+    setTimeout(() => {
+      const el = document.getElementById("cek");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  };
   return (
     <>
       <div className="nav-box fixed top-0 z-[9999] w-screen px-8 py-6 max-md:py-4 h-20 max-md:h-15">
@@ -42,6 +67,7 @@ export default function Navbar() {
             </li>
             <li>
               <a
+                onClick={handleBackIntro}
                 href="#intro"
                 className="relative group transition-all duration-300 hover:-translate-y-1"
               >
@@ -51,6 +77,7 @@ export default function Navbar() {
             </li>
             <li>
               <a
+                onClick={handleBackCek}
                 href="#cek"
                 className="relative group transition-all duration-300 hover:-translate-y-1"
               >
@@ -87,7 +114,7 @@ export default function Navbar() {
                 <a
                   href="#home"
                   className="block px-3 py-2 hover:bg-indigo-900 hover:text-white transition-colors duration-200"
-                  onClick={closeSidebar}
+                  onClick={handleBackHome}
                 >
                   Home
                 </a>
@@ -96,7 +123,7 @@ export default function Navbar() {
                 <a
                   href="#intro"
                   className="block px-3 py-2 hover:bg-indigo-900 hover:text-white transition-colors duration-200"
-                  onClick={closeSidebar}
+                  onClick={handleBackIntro}
                 >
                   Introduction
                 </a>
@@ -105,7 +132,7 @@ export default function Navbar() {
                 <a
                   href="#cek"
                   className=" block px-3 py-2 hover:bg-indigo-900 hover:text-white transition-colors duration-200"
-                  onClick={closeSidebar}
+                  onClick={handleBackCek}
                 >
                   Cek Kondisi
                 </a>
