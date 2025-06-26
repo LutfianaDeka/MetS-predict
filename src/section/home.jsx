@@ -1,5 +1,12 @@
 import "../App.css";
 export default function Home() {
+  const handleScrollToCek = () => {
+    // Tunggu agar elemen tersedia sebelum scroll
+    const el = document.getElementById("cek");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <>
       <div className="home md:h-screen max-md:h-90 bg-white flex flex-row pt-20 max-md:pt-15 shadow-md">
@@ -11,7 +18,10 @@ export default function Home() {
           <p className="pt-14 pb-4 text-lg max-md:text-xs max-md:pt-8 max-md:pb-2 max-sm:pt-4">
             Ingin tahu kondisimu?
           </p>
-          <button className="btn-cek px-8 py-3 rounded-full font-bold text-white max-md:text-xs max-md:px-4 max-md:py-2 cursor-pointer">
+          <button
+            onClick={handleScrollToCek}
+            className="btn-cek px-8 py-3 rounded-full font-bold text-white max-md:text-xs max-md:px-4 max-md:py-2 cursor-pointer"
+          >
             CEK SEKARANG
           </button>
         </div>
