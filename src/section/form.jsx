@@ -69,8 +69,8 @@ export default function FormMets() {
 
     try {
       const res = await axios.post(
-        "https://6ad0d140-b2b5-44b9-884c-80f31c5ecd16-00-3vlmzk4ociaws.sisko.replit.dev:3000/predict",
-        payload
+        "https://thisdks17-metspredict.hf.space/predict",
+        payload,
       );
       const prediction = res.data.result;
 
@@ -78,7 +78,7 @@ export default function FormMets() {
       console.log(
         "📊 Hasil prediksi dari backend:",
         prediction,
-        typeof prediction
+        typeof prediction,
       );
 
       if (parseInt(prediction) === 0) {
